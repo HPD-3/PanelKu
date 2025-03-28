@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanelKu Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>PanelKu<span class="green-dot">.</span></h2>
+        <p>Welcome!</p>
+        <ul>
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Customer Detail</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <p>Hello, <strong>Samantha</strong></p>
+        </header>
+        <div class="chart-container">
+            <div class="card">
+                <h3>Power Input</h3>
+                <canvas id="powerInputChart"></canvas>
+            </div>
+            <div class="card">
+                <h3>Power Output</h3>
+                <canvas id="powerOutputChart"></canvas>
+            </div>
+            <div class="card">
+                <h3>Solar Power Utilization</h3>
+                <canvas id="totalEnergyChart"></canvas>
+            </div>
+            <div class="card">
+                <h3>Panel Physical Condition</h3>
+                <canvas id="panelPhysicalConditionChart"></canvas>
+            </div>
+            <div class="card">
+                <h3>Battery Health</h3>
+                <canvas id="batteryHealthChart"></canvas>
+                
+            </div>
+            <div class="card">
+                <h3>Panel Efficiency</h3>
+                <canvas id="panelEfficiencyChart"></canvas>
+            </div>
+        </div>
+        </div>
+</body>
+</html>

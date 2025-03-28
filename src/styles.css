@@ -1,0 +1,212 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #F8FAFC;
+    color: #333;
+    display: flex;
+}
+
+p {
+    color: #4A4A4A;
+}
+
+.green-dot {
+    color: green;
+}
+
+.container {
+    background-color: black;
+    color: white;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 13px;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: calc(100% - 20px);
+    max-width: 100%;
+    padding: 12px;
+    margin: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+input[type="submit"] {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #66bb6a;
+    color: white;
+}
+
+label,
+a {
+    margin: 10px;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: blue;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #F5F7FA;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4A4A4A;
+    padding: 12px;
+    border-radius: 8px;
+    display: block;
+    transition: background 0.3s ease-in-out;
+}
+
+.sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.sidebar a:hover {
+    background-color: #E0E5EC;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+    width: calc(100% - 260px);
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.chart-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* All charts in one column */
+    gap: 20px;
+}
+
+
+.panel-health-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    position: relative;
+}
+
+.panel-health-chart h4 {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+canvas {
+    width: 100% !important;
+    height: 300px !important; /* Adjust height */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .chart-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+    }
+}
+
+@media (min-width: 1024px) {
+    .chart-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+    }
+}
