@@ -1,4 +1,4 @@
-
+/* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -12,6 +12,7 @@ body {
     background-color: #F8FAFC;
     color: #333;
     display: flex;
+    flex-direction: column;
 }
 
 p {
@@ -22,65 +23,31 @@ p {
     color: green;
 }
 
-.container {
-    background-color: black;
+/* Navbar */
+.navbar {
+    background: #333;
     color: white;
-    width: 400px;
+    padding: 15px 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 13px;
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-form {
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
     width: 100%;
-    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="submit"] {
-    width: calc(100% - 20px);
-    max-width: 100%;
-    padding: 12px;
-    margin: 10px;
-    font-size: 16px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    background-color: black;
+.navbar a {
     color: white;
-    border: 1px solid white;
-}
-
-input[type="submit"] {
-    background-color: white;
-    color: black;
-    cursor: pointer;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
     transition: 0.3s;
 }
 
-input[type="submit"]:hover {
-    background-color: #66bb6a;
-    color: white;
-}
-
-label,
-a {
-    margin: 10px;
-}
-
-a {
-    color: white;
-}
-
-a:hover {
-    color: blue;
+.navbar a:hover {
+    color: #66bb6a;
 }
 
 /* Sidebar */
@@ -138,23 +105,20 @@ a:hover {
     margin-left: 260px;
     padding: 20px;
     width: calc(100% - 260px);
+    transition: margin-left 0.3s ease-in-out;
+    margin-top: 60px;
 }
 
 /* Header */
 header {
     background: white;
-    padding: 15px;
+    padding: 15px 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
-}
-
-
-.card:hover {
-    transform: scale(1.02);
 }
 
 .card {
@@ -163,6 +127,11 @@ header {
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 .card h3 {
@@ -174,10 +143,9 @@ header {
 
 .chart-container {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* All charts in one column */
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
 }
-
 
 .panel-health-chart {
     display: flex;
@@ -195,18 +163,75 @@ header {
 
 canvas {
     width: 100% !important;
-    height: 300px !important; /* Adjust height */
+    height: 300px !important;
 }
 
 /* Responsive Design */
 @media (min-width: 768px) {
     .chart-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
     .chart-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Responsive Sidebar */
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 5px;
+    display: none;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
     }
 }
