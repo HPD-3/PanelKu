@@ -1,4 +1,4 @@
-/* Import Font */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -23,7 +23,7 @@ p {
     color: green;
 }
 
-/* Navbar */
+
 .navbar {
     background: #333;
     color: white;
@@ -50,7 +50,7 @@ p {
     color: #66bb6a;
 }
 
-/* Sidebar */
+
 .sidebar {
     background-color: #F5F7FA;
     width: 250px;
@@ -100,7 +100,7 @@ p {
     background-color: #E0E5EC;
 }
 
-/* Main Content */
+
 .main-content {
     margin-left: 260px;
     padding: 20px;
@@ -109,7 +109,7 @@ p {
     margin-top: 60px;
 }
 
-/* Header */
+
 header {
     background: white;
     padding: 15px 20px;
@@ -119,6 +119,92 @@ header {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+}
+
+.container {
+    background-color: black;
+    color: white;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 13px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-bottom: 15px;
+}
+
+.menu-item img {
+    width: 30px; 
+    height: 30px;
+}
+
+.menu-item span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: calc(100% - 20px);
+    max-width: 100%;
+    padding: 12px;
+    margin: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+input[type="submit"] {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #66bb6a;
+    color: white;
+}
+
+
+label,
+a {
+    margin: 10px;
+}
+
+a {
+    color: white;
+}
+
+.container a:hover {
+    color: blue;
 }
 
 .card {
@@ -147,6 +233,49 @@ header {
     gap: 20px;
 }
 
+.customcontainer {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-radius: 20px;
+    border: #f4f4f4 solid 1px;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.customcontainer .chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.customcontainer .chart-container .card {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+
+.customcontainer h2 {
+    text-align: left;
+}
+#profile {
+    width: 100%; 
+    max-width: 200px; 
+    height: auto; 
+    margin: 20px auto;
+    border: #333 1px solid;
+    border-radius: 42%;
+    display: block; 
+}
+
 .panel-health-chart {
     display: flex;
     flex-direction: column;
@@ -166,7 +295,7 @@ canvas {
     height: 300px !important;
 }
 
-/* Responsive Design */
+
 @media (min-width: 768px) {
     .chart-container {
         grid-template-columns: repeat(2, 1fr);
@@ -177,9 +306,13 @@ canvas {
     .chart-container {
         grid-template-columns: repeat(4, 1fr);
     }
+    #profile {
+        width: 30%; 
+        max-width: 400px;
+    }
 }
 
-/* Responsive Sidebar */
+
 .toggle-btn {
     position: absolute;
     top: 10px;
@@ -233,5 +366,14 @@ canvas {
     .main-content {
         margin-left: 0;
         width: 100%;
+    }
+    .customcontainer .chart-container .card {
+        width: 300px;
+        margin: auto;
+        text-align: center;
+    }
+    #profile {
+        width: 40%; 
+        max-width: 300px; 
     }
 }
