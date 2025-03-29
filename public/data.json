@@ -3,5 +3,7 @@
     "values": [500, 620, 700, 480, 520, 610, 750],
     "powerOutput": [60, 70, 80, 65, 75, 85, 90],
     "totalEnergy": [410, 50, 20],
-    "panelHealth": [81, 22, 62]
+    "panelHealth": [81, 22, 62],
+    "acountname" : "chihuahua",
+    "bio" : "im is a dog dog dog cute lil dog"
 }
