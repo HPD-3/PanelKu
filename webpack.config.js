@@ -24,6 +24,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/dashboard.html',
       filename: 'dashboard.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/customer.html',
+      filename: 'customer.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/register.html',
+      filename: 'register.html',
     })
   ],
   devServer: {
